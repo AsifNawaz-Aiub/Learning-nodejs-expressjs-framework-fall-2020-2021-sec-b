@@ -35,20 +35,47 @@
   </table>
   </div>
 
-  <div id="content" class="w3-container tab w3-animate-opatab" style="display:none">
+<div id="content" class="w3-container tab w3-animate-opatab" style="display:none">
     
-<div class="">
-  <h2>Contents</h2>
+<div class="" style="margin-left: -20px; margin-right: -20px; ">
+  
   
 
   <div class="w3-bar w3-black">
     <button class="w3-bar-item w3-button tablink2 w3-red" onclick="openContent(event,'Movies')">Movies</button>
-    <button class="w3-bar-item w3-button tablink2" onclick="openContent(event,'TVSeries')">TVSeries</button>
+    <button class="w3-bar-item w3-button tablink2" onclick="openContent(event,'TVSeries')">TV Series</button>
     <button class="w3-bar-item w3-button tablink2" onclick="openContent(event,'Softwares')">Softwares</button>
     <button class="w3-bar-item w3-button tablink2" onclick="openContent(event,'Games')">Games</button>
   </div>
   
-  <div id="Movies" class="w3-container w3-border contebtTab">
+  <div id="Movies" class="w3-container w3-border contebtTab" > <!-- movies -->
+    <h2>Upload :</h2>
+    <form method="POST" action="/admin/moviepload">
+    <table>
+        <tr>
+            <th>Genre</th>
+            <th>Movie Name</th>
+            <th>Rating</th>
+            <th>Publish Year</th>
+            <th>Action</th>
+  
+          </tr>
+
+          <tr id="rows">
+            <td> <input type="text"> </td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td>
+              <button type="submit"> Upload </button>
+            </td>
+          </tr>
+
+    </table>
+    
+    
+    </form>
+    <h2>Contents :</h2>
     <table>
         <tr>
           <th>Genre</th>
@@ -73,9 +100,37 @@
         <% } %>
 
        </table>
-  </div>
+  </div><!-- movies end -->
 
   <div id="TVSeries" class="w3-container w3-border contebtTab" style="display:none">
+    <h2>Upload :</h2>
+    <form method="POST" action="/admin/movieUpload">
+    <table>
+        <tr>
+            <th>Genre</th>
+            <th>Series Name</th>
+            <th>Rating</th>
+            <th>Publish Year</th>
+            <th>Action</th>
+  
+          </tr>
+
+          <tr id="rows">
+            <td> <input type="text"> </td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td>
+              <button type="submit"> Upload </button>
+            </td>
+          </tr>
+
+    </table>
+    
+    
+    </form>
+    
+    <h2>Contents :</h2>
     <table>
         <tr>
           <th>Genre</th>
@@ -101,7 +156,40 @@
 
        </table>
   </div>
+
   <div id="Games" class="w3-container w3-border contebtTab" style="display:none">
+    <h2>Upload :</h2>
+    <form method="POST" action="/admin/gameUpload">
+    <table>
+        <tr>
+          <th>Category</th>
+          <th>Game Name</th>
+          <th>Cracked By</th>
+          <th>Size</th>
+          <th>Action</th>
+  
+          </tr>
+
+          <tr id="rows">
+            <td> <input type="text"> </td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            
+            <td>
+              <button type="submit"> Upload </button>
+            </td>
+          </tr>
+
+    </table>
+    
+    
+    </form>
+    
+    <h2>Contents :</h2>
+   
+   
+   
     <table>
         <tr>
           <th>Category</th>
@@ -127,8 +215,41 @@
 
        </table>
   </div>
+</div>
+
 
   <div id="Softwares" class="w3-container w3-border contebtTab" style="display:none">
+    <h2>Upload :</h2>
+    <form method="POST" action="/admin/softwareUpload">
+    <table>
+        <tr>
+            <tr>
+                <th>Type</th>
+                <th>Name</th>
+                <th>Version</th>
+                <th>Action</th>
+      
+              </tr>
+  
+          </tr>
+
+          <tr id="rows">
+            <td> <input type="text"> </td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td>
+              <button type="submit"> Upload </button>
+            </td>
+          </tr>
+
+    </table>
+    
+    
+    </form>
+    
+    <h2>Contents :</h2>
+   
+   
     <table>
         <tr>
           <th>Type</th>
@@ -163,12 +284,12 @@
     <p>Movies is the capital tab of England.</p>
     <p>It is the most populous tab in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
   </div>
+
   <div id="box" class="w3-container tab w3-animate-opatab" style="display:none">
     <h2>Fade in</h2>
     <p>Movies is the capital tab of England.</p>
     <p>It is the most populous tab in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
   </div>
-
 
 
 
