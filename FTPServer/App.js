@@ -7,6 +7,7 @@ const ftpsite = require("./controller/ftpsite");
 const login = require("./controller/login");
 const logout = require("./controller/logout");
 const signup = require("./controller/signup");
+const admin = require("./controller/admin");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/ftpsite", ftpsite);
 app.use("/login", login);
 app.use("/logout", logout);
 app.use("/signup", signup);
+app.use("/admin", admin);
 
 app.get("/",(req,res)=>{
 res.redirect("/login");

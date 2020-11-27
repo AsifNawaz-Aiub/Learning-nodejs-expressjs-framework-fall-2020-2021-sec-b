@@ -28,7 +28,7 @@ module.exports ={
         });
 	},
 	getAll: function(callback){
-		var sql = "select * from events";
+		var sql = "select * from tvseries";
 		db.getResults(sql, function(results){
 			callback(results);
 		});
