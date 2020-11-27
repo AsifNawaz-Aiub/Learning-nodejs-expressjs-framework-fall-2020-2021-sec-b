@@ -21,8 +21,11 @@ router.get("/", (req, res) => {
                 var softwares=results;
                 tvseriesModel.getAll(function (results) {
                     var tvseries=results;
-                    res.render("admin/index",{admin :  req.session.user, games : games, movies : movies, softwares : softwares, tvseries : tvseries  })
-            
+                    userModel.getAllMod(function (results) {
+                        var mod=results;
+                        res.render("admin/index",{admin :  req.session.user, games : games, movies : movies, softwares : softwares, tvseries : tvseries, mod : mod  })
+                
+                        });
                     });
         
                 });

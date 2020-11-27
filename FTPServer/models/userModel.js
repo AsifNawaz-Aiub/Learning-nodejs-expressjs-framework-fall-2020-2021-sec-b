@@ -37,6 +37,13 @@ module.exports ={
 		});
 
 	},
+	getAllMod: function(callback){
+		var sql = "select * from users where type='moderator' ";
+		db.getResults(sql, function(results){
+			callback(results);
+		});
+
+	},
 	getAllByUserType: function(userType, callback){
 		var sql = "select * from users where userType='" + userType + "'";
 		db.getResults(sql, function(results){

@@ -19,6 +19,7 @@
   <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'content')">Content Management</button>
   <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'moderator')">Moderator Management</button>
   <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'box')">Request Box</button>
+  <a class="w3-bar-item w3-button w3-black" href="/ftpsite">FTP Server</a>
   <a class="w3-bar-item w3-button w3-black" href="/logout">Logout</a>
 </div>
 
@@ -279,16 +280,45 @@
 
   </div>
 
-  <div id="moderator" class="w3-container tab w3-animate-opatab" style="display:none">
-    <h2>Fade in</h2>
-    <p>Movies is the capital tab of England.</p>
-    <p>It is the most populous tab in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+  <div id="moderator" class="w3-container tab w3-animate-opatab" style="display:none"> <!-- mod -->
+   
+    <h2>Moderators :</h2>
+   
+   
+    <table>
+        <tr>
+          <th>Id</th>
+          <th>User Name</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Action</th>
+
+        </tr>
+
+        <% for(var i=0; i< mod.length; i++ ){ %>
+          
+        <tr id="rows">
+          <td><%= mod[i].id %></td>
+          <td><%= mod[i].username %></td>
+          <td><%= mod[i].fullname %></td>
+          <td><%= mod[i].email %></td>
+          <td>
+          <a href="/ftpsite/modDelete/<%=mod[i].id%>"class="w3-bar-item w3-button tablink" >Remove</a>
+          </td>
+        </tr>
+        <% } %>
+
+       </table>
   </div>
 
+
+
+
+
+
   <div id="box" class="w3-container tab w3-animate-opatab" style="display:none">
-    <h2>Fade in</h2>
-    <p>Movies is the capital tab of England.</p>
-    <p>It is the most populous tab in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <h2>Requests :</h2>
+    
   </div>
 
 
