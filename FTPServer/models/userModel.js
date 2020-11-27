@@ -59,7 +59,7 @@ module.exports ={
 	},
 	
 	insert: function(user, callback){
-		var sql = "insert into users (name, username, email, password, usertype, createdat) VALUES ('"+user.name+"' , '"+user.username+"' ,  '"+user.email+"' , '"+user.password+"' , '"+user.userType+"', current_timestamp() )";
+		var sql = "insert into users (fullname, username, email, password, type) VALUES ('"+user.name+"' , '"+user.username+"' ,  '"+user.email+"' , '"+user.password+"' , '"+user.type+"')";
 		
 		//console.log(sql);
 

@@ -6,6 +6,7 @@ const expressValidator =  require("express-validator");
 const ftpsite = require("./controller/ftpsite");
 const login = require("./controller/login");
 const logout = require("./controller/logout");
+const signup = require("./controller/signup");
 
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(expressValidator());
 app.use("/ftpsite", ftpsite);
 app.use("/login", login);
 app.use("/logout", logout);
+app.use("/signup", signup);
 
 app.get("/",(req,res)=>{
 res.redirect("/login");
