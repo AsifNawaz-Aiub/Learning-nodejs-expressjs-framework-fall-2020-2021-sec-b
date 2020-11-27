@@ -298,7 +298,7 @@
 
 
   <div id="Softwares" class="w3-container w3-border tabsM" style="display:none">
-    <h2>Softwares</h2>
+   
      <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px; margin-left: -18px ">
         <h5 class="w3-bar-item">Menu</h5>
       
@@ -309,31 +309,85 @@
       </div>
       
       <div style="margin-left:130px">
-        <h2>TVSeries</h2>
-        <div class="w3-padding">Use any of the w3-animate-classes to fade, zoom or slide in tab content.</div>
+        <h2>Softwares</h2>
+    
       
       
       
         <div id="Left7" class="w3-container tabs w3-animate-left" style="display:none">
-            <table>
-                <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
- 
-                <tr> <td>tabsss</td><td>tabsss</td></tr>
-             </table>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Action</th>
+    
+            </tr>
+    
+            <% for(var i=0; i< applicationSoft.length; i++ ){ %>
+              
+            <tr id="rows">
+              <td><%= applicationSoft[i].type %></td>
+              <td><%= applicationSoft[i].name %></td>
+              <td><%= applicationSoft[i].version %></td>
+             
+              <td>
+              <a href="/ftpsite/movieDownload/<%=applicationSoft[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+              </td>
+            </tr>
+            <% } %>
+    
+           </table>
         </div>
         <div id="Left8" class="w3-container tabs w3-animate-left" style="display:none">
-            <table>
-                <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
- 
-                <tr> <td>tabsss</td><td>tabsss</td></tr>
-             </table>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Action</th>
+    
+            </tr>
+    
+            <% for(var i=0; i< utilitySoft.length; i++ ){ %>
+              
+            <tr id="rows">
+              <td><%= utilitySoft[i].type %></td>
+              <td><%= utilitySoft[i].name %></td>
+              <td><%= utilitySoft[i].version %></td>
+             
+              <td>
+              <a href="/ftpsite/softwareDownload/<%=utilitySoft[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+              </td>
+            </tr>
+            <% } %>
+    
+           </table>
         </div>
         <div id="Left9" class="w3-container tabs w3-animate-left" style="display:none">
-            <table>
-                <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
- 
-                <tr> <td>tabsss</td><td>tabsss</td></tr>
-             </table>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Action</th>
+    
+            </tr>
+    
+            <% for(var i=0; i< driverSoft.length; i++ ){ %>
+              
+            <tr id="rows">
+              <td><%= driverSoft[i].type %></td>
+              <td><%= driverSoft[i].name %></td>
+              <td><%= driverSoft[i].version %></td>
+             
+              <td>
+              <a href="/ftpsite/softwareDownload/<%=driverSoft[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+              </td>
+            </tr>
+            <% } %>
+    
+           </table>
         </div>
 
 
@@ -364,37 +418,98 @@
   
 
   <div id="Games" class="w3-container w3-border tabsM" style="display:none">
-    <h2>Games</h2>
-      <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px; margin-left: -18px ">
-        <h5 class="w3-bar-item">Menu</h5>
-      
-        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left10')">Action</button>
-        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left11')">Thriller</button>
-        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left12')">Comedy</button>
-       
-      </div>
+    
+    <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px; margin-left: -18px ">
+      <h5 class="w3-bar-item">Menu</h5>
+    
+      <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left10')">Open World</button>
+      <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left11')">RPG</button>
+      <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left12')">Racing</button>
+     
+    </div>
+    <div style="margin-left: 130px;">
+      <h2>Games</h2>
       <div id="Left10" class="w3-container tabs w3-animate-left" style="display:none">
         <table>
-            <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
-
-            <tr> <td>tabsss</td><td>tabsss</td></tr>
+          <tr>
+            <th>Category</th>
+            <th>Game Name</th>
+            <th>Cracked By</th>
+            <th>Size</th>
+            <th>Action</th>
+  
+          </tr>
+  
+          <% for(var i=0; i< openWorld.length; i++ ){ %>
+            
+          <tr id="rows">
+            <td><%= openWorld[i].category %></td>
+            <td><%= openWorld[i].name %></td>
+            <td><%= openWorld[i].crackedby %></td>
+            <td><%= openWorld[i].size %></td>
+            <td>
+            <a href="/ftpsite/gameDownload/<%=openWorld[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+            </td>
+          </tr>
+          <% } %>
+  
          </table>
     </div>
     <div id="Left11" class="w3-container tabs w3-animate-left" style="display:none">
-        <table>
-            <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Game Name</th>
+          <th>Cracked By</th>
+          <th>Size</th>
+          <th>Action</th>
 
-            <tr> <td>tabsss</td><td>tabsss</td></tr>
-         </table>
+        </tr>
+
+        <% for(var i=0; i< RPG.length; i++ ){ %>
+          
+        <tr id="rows">
+          <td><%= RPG[i].category %></td>
+          <td><%= RPG[i].name %></td>
+          <td><%= RPG[i].crackedby %></td>
+          <td><%= RPG[i].size %></td>
+          <td>
+          <a href="/ftpsite/gameDownload/<%=RPG[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+          </td>
+        </tr>
+        <% } %>
+
+       </table>
     </div>
     <div id="Left12" class="w3-container tabs w3-animate-left" style="display:none">
-        <table>
-            <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Game Name</th>
+          <th>Cracked By</th>
+          <th>Size</th>
+          <th>Action</th>
 
-            <tr> <td>tabsss</td><td>tabsss</td></tr>
-         </table>
+        </tr>
+
+        <% for(var i=0; i< racing.length; i++ ){ %>
+          
+        <tr id="rows">
+          <td><%= racing[i].category %></td>
+          <td><%= racing[i].name %></td>
+          <td><%= racing[i].crackedby %></td>
+          <td><%= racing[i].size %></td>
+          <td>
+          <a href="/ftpsite/gameDownload/<%=racing[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+          </td>
+        </tr>
+        <% } %>
+
+       </table>
     </div>
 
+
+    </div>
 
   
   </div>

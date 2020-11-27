@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const moviesModel = require.main.require("./models/moviesModel");
 const tvseriesModel = require.main.require("./models/tvseriesModel");
+const softwaresModel = require.main.require("./models/softwaresModel");
+const gamesModel = require.main.require("./models/gamesModel");
 
 router.get("/", (req,res ) => {
 
@@ -17,7 +19,27 @@ router.get("/", (req,res ) => {
                     var thrillerTvSeries=results;
                     tvseriesModel.getByComedy(function (results) {
                         var comedyTvSeries=results;
-                        res.render("ftpsite/index",{actionMovies : actionMovies, thrillerMovies : thrillerMovies, comedyMovies : comedyMovies,actionTvSeries : actionTvSeries,thrillerTvSeries : thrillerTvSeries,comedyTvSeries : comedyTvSeries });
+                        softwaresModel.getByApplication(function (results) {
+                            var applicationSoft=results;
+                            softwaresModel.getByUtility(function (results) {
+                                var utilitySoft=results;
+                                softwaresModel.getByDriver(function (results) {
+                                    var driverSoft=results;
+                                    gamesModel.getByOpenWorld(function (results) {
+                                        var openWorld=results;
+                                        gamesModel.getByRPG(function (results) {
+                                            var RPG=results;
+                                            gamesModel.getByRacing(function (results) {
+                                                var racing=results;
+                                                res.render("ftpsite/index",{actionMovies : actionMovies, thrillerMovies : thrillerMovies, comedyMovies : comedyMovies,actionTvSeries : actionTvSeries,thrillerTvSeries : thrillerTvSeries,comedyTvSeries : comedyTvSeries, applicationSoft : applicationSoft,utilitySoft : utilitySoft,driverSoft : driverSoft, openWorld : openWorld, RPG : RPG, racing : racing  });
+  
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                       
                         });
                     });
              
@@ -31,5 +53,6 @@ router.get("/", (req,res ) => {
    
 });
 
+//res.render("ftpsite/index",{actionMovies : actionMovies, thrillerMovies : thrillerMovies, comedyMovies : comedyMovies,actionTvSeries : actionTvSeries,thrillerTvSeries : thrillerTvSeries,comedyTvSeries : comedyTvSeries, applicationSoft : applicationSoft,utilitySoft : utilitySoft,driverSoft : driverSoft });
   
 module.exports = router;
