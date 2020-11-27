@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<title>FTP Server</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/assets/css/ftpsiteIndex.css">
+
+<body>
+
+<div class="" style="margin-left: 0px;" >
+    <div class="header">
+        <a href="#default" class="logo">Fast Net FTP Server</a>
+        <div class="header-right">
+          <a class="active" href="#home">Home</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+  
+
+  <div class="w3-bar w3-black"; style="margin-left: 0px;" >
+    <button class="w3-bar-item w3-button w3-black" style="padding: 20px; padding-left: 34px; padding-right: 35px; ">Contents</button>
+    <button class="w3-bar-item w3-button tablink w3-red" style="padding: 20px; padding-left: 90px; padding-right: 90px; " onclick="openTab(event,'Movies')">Movies</button>
+    <button class="w3-bar-item w3-button tablink" style="padding: 20px; padding-left: 90px; padding-right: 90px; " onclick="openTab(event,'TVSeries')">TV Series</button>
+    <button class="w3-bar-item w3-button tablink" style="padding: 20px; padding-left: 90px; padding-right: 90px; " onclick="openTab(event,'Softwares')">Softwares</button>
+    <button class="w3-bar-item w3-button tablink" style="padding: 20px; padding-left: 90px; padding-right: 90px; " onclick="openTab(event,'Games')">Games</button>
+  </div>
+
+
+ 
+  
+
+
+
+
+  
+
+  <div id="Movies" class="w3-container w3-border tabsM">
+    
+    <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px; margin-left: -18px ">
+        <h5 class="w3-bar-item">Menu</h5>
+      
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left1')">Action</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left2')">Thriller</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left3')">Comedy</button>
+       
+      </div>
+      
+      <div style="margin-left:130px">
+        <h2>Movies</h2>
+        <div id="Left1" class="w3-container tabs w3-animate-left" style="display:none">
+       <table>
+        <tr>
+          <th>Genre</th>
+          <th>Movie Name</th>
+          <th>Rating</th>
+          <th>Publish Year</th>
+          <th>Action</th>
+
+        </tr>
+
+        <% for(var i=0; i< actionMovies.length; i++ ){ %>
+          
+        <tr id="rows">
+          <td><%= actionMovies[i].genre %></td>
+          <td><%= actionMovies[i].name %></td>
+          <td><%= actionMovies[i].rating %></td>
+          <td><%= actionMovies[i].publishYear %></td>
+          <td>
+          <a href="/ftpsite/movieDownload/<%=actionMovies[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+          </td>
+        </tr>
+        <% } %>
+
+       </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="Left2" class="w3-container tabs w3-animate-left" style="display:none">
+          <table>
+            <tr>
+              <th>Genre</th>
+              <th>Movie Name</th>
+              <th>Rating</th>
+              <th>Publish Year</th>
+              <th>Action</th>
+    
+            </tr>
+    
+            <% for(var i=0; i< thrillerMovies.length; i++ ){ %>
+              
+            <tr id="rows">
+              <td><%= thrillerMovies[i].genre %></td>
+              <td><%= thrillerMovies[i].name %></td>
+              <td><%= thrillerMovies[i].rating %></td>
+              <td><%= thrillerMovies[i].publishYear %></td>
+              <td>
+              <a href="/ftpsite/movieDownload/<%=thrillerMovies[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+              </td>
+            </tr>
+            <% } %>
+    
+           </table>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="Left3" class="w3-container tabs w3-animate-left" style="display:none">
+          <table>
+            <tr>
+              <th>Genre</th>
+              <th>Movie Name</th>
+              <th>Rating</th>
+              <th>Publish Year</th>
+              <th>Action</th>
+    
+            </tr>
+    
+            <% for(var i=0; i< comedyMovies.length; i++ ){ %>
+              
+            <tr id="rows">
+              <td><%= comedyMovies[i].genre %></td>
+              <td><%= comedyMovies[i].name %></td>
+              <td><%= comedyMovies[i].rating %></td>
+              <td><%= comedyMovies[i].publishYear %></td>
+              <td>
+              <a href="/ftpsite/movieDownload/<%=comedyMovies[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+              </td>
+            </tr>
+            <% } %>
+    
+           </table>
+        </div>
+
+
+      
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="TVSeries" class="w3-container w3-border tabsM" style="display:none">
+    
+    <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px; margin-left: -18px ">
+        <h5 class="w3-bar-item">Menu</h5>
+      
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left4')">Action</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left5')">Thriller</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left6')">Comedy</button>
+       
+      </div>
+      
+      <div style="margin-left:130px">
+        <h2>TVSeries</h2>
+        
+      
+      
+      
+        <div id="Left4" class="w3-container tabs w3-animate-left" style="display:none">
+          <table>
+              <tr>
+                <th>Genre</th>
+                <th>Series Name</th>
+                <th>Rating</th>
+                <th>Publish Year</th>
+                <th>Action</th>
+      
+              </tr>
+      
+              <% for(var i=0; i< actionTvSeries.length; i++ ){ %>
+                
+              <tr id="rows">
+                <td><%= actionTvSeries[i].genre %></td>
+                <td><%= actionTvSeries[i].name %></td>
+                <td><%= actionTvSeries[i].rating %></td>
+                <td><%= actionTvSeries[i].publishYear %></td>
+                <td>
+                <a href="/ftpsite/seriesDownload/<%=actionTvSeries[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+                </td>
+              </tr>
+              <% } %>
+      
+             </table>
+        </div>
+
+        <div id="Left5" class="w3-container tabs w3-animate-left" style="display:none">
+            <table>
+              <tr>
+                <th>Genre</th>
+                <th>Series Name</th>
+                <th>Rating</th>
+                <th>Publish Year</th>
+                <th>Action</th>
+      
+              </tr>
+      
+              <% for(var i=0; i< thrillerTvSeries.length; i++ ){ %>
+                
+              <tr id="rows">
+                <td><%= thrillerTvSeries[i].genre %></td>
+                <td><%= thrillerTvSeries[i].name %></td>
+                <td><%= thrillerTvSeries[i].rating %></td>
+                <td><%= thrillerTvSeries[i].publishYear %></td>
+                <td>
+                <a href="/ftpsite/seriesDownload/<%=thrillerTvSeries[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+                </td>
+              </tr>
+              <% } %>
+      
+             </table>
+        </div>
+        <div id="Left6" class="w3-container tabs w3-animate-left" style="display:none">
+          <table>
+            <tr>
+              <th>Genre</th>
+              <th>Series Name</th>
+              <th>Rating</th>
+              <th>Publish Year</th>
+              <th>Action</th>
+    
+            </tr>
+    
+            <% for(var i=0; i< comedyTvSeries.length; i++ ){ %>
+              
+            <tr id="rows">
+              <td><%= comedyTvSeries[i].genre %></td>
+              <td><%= comedyTvSeries[i].name %></td>
+              <td><%= comedyTvSeries[i].rating %></td>
+              <td><%= comedyTvSeries[i].publishYear %></td>
+              <td>
+              <a href="/ftpsite/seriesDownload/<%=comedyTvSeries[i].id%>"class="w3-bar-item w3-button tablink" >Download</a>
+              </td>
+            </tr>
+            <% } %>
+    
+           </table>
+        </div>
+
+
+      
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div id="Softwares" class="w3-container w3-border tabsM" style="display:none">
+    <h2>Softwares</h2>
+     <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px; margin-left: -18px ">
+        <h5 class="w3-bar-item">Menu</h5>
+      
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left7')">Application</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left8')">Utility</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left9')">Drivers</button>
+       
+      </div>
+      
+      <div style="margin-left:130px">
+        <h2>TVSeries</h2>
+        <div class="w3-padding">Use any of the w3-animate-classes to fade, zoom or slide in tab content.</div>
+      
+      
+      
+        <div id="Left7" class="w3-container tabs w3-animate-left" style="display:none">
+            <table>
+                <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+ 
+                <tr> <td>tabsss</td><td>tabsss</td></tr>
+             </table>
+        </div>
+        <div id="Left8" class="w3-container tabs w3-animate-left" style="display:none">
+            <table>
+                <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+ 
+                <tr> <td>tabsss</td><td>tabsss</td></tr>
+             </table>
+        </div>
+        <div id="Left9" class="w3-container tabs w3-animate-left" style="display:none">
+            <table>
+                <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+ 
+                <tr> <td>tabsss</td><td>tabsss</td></tr>
+             </table>
+        </div>
+
+
+      
+      </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <div id="Games" class="w3-container w3-border tabsM" style="display:none">
+    <h2>Games</h2>
+      <div class="w3-sidebar w3-bar-block w3-black w3-card" style="width:130px; margin-left: -18px ">
+        <h5 class="w3-bar-item">Menu</h5>
+      
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left10')">Action</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left11')">Thriller</button>
+        <button class="w3-bar-item w3-button tablink2" onclick="openLink(event, 'Left12')">Comedy</button>
+       
+      </div>
+      <div id="Left10" class="w3-container tabs w3-animate-left" style="display:none">
+        <table>
+            <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+
+            <tr> <td>tabsss</td><td>tabsss</td></tr>
+         </table>
+    </div>
+    <div id="Left11" class="w3-container tabs w3-animate-left" style="display:none">
+        <table>
+            <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+
+            <tr> <td>tabsss</td><td>tabsss</td></tr>
+         </table>
+    </div>
+    <div id="Left12" class="w3-container tabs w3-animate-left" style="display:none">
+        <table>
+            <tr> <th>tabsssssss</th>  <th>tabsssssss</th></tr>
+
+            <tr> <td>tabsss</td><td>tabsss</td></tr>
+         </table>
+    </div>
+
+
+  
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/assets/js/ftpsiteIndex.js"> </script>
+
+</body>
+</html>
