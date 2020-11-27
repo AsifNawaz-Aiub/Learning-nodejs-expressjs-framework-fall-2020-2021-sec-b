@@ -3,7 +3,9 @@ const bodyParser = require("body-parser");
 const exSession = require("express-session");
 const expressValidator =  require("express-validator");
 
-const ftpsite = require("./controller/ftpsite"); 
+const ftpsite = require("./controller/ftpsite");
+const login = require("./controller/login");
+const logout = require("./controller/logout");
 
 const app = express();
 
@@ -22,9 +24,11 @@ app.use(
 app.use(expressValidator());
 
 app.use("/ftpsite", ftpsite);
+app.use("/login", login);
+app.use("/logout", logout);
 
 app.get("/",(req,res)=>{
-res.redirect("/ftpsite");
+res.redirect("/login");
 
 });
 
